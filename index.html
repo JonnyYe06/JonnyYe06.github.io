@@ -335,18 +335,26 @@
   <!-- Camera -->
     <!-- Twitch livestream hier: -->
  
-  <iframe
-    
-  src="https://player.twitch.tv/?channel=jonnyye06&parent=jonnyye06.github.io"
-    allowfullscreen>
-  </iframe>
 
 
+  <div id="twitch-embed"></div>
+
+  <!-- Twitch embed script -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <script type="text/javascript">
+    new Twitch.Embed("twitch-embed", {
+      width: 720,
+      height: 480,
+      channel: "jonnyye06",
+      parent: ["jonnyye06.github.io"]
+    });
+  </script>
   
  
 
 
   <script>
+
     // Timer functionaliteit
     document.addEventListener("DOMContentLoaded", function() {
       var timerElement = document.getElementById("timer");
@@ -480,7 +488,6 @@ function sendCommand(command) {
         alert("Not connected to the PICO")
     }
 }
-
 
 
 
